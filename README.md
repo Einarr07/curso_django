@@ -1,28 +1,76 @@
-# 🚀 Django
+# 🚀 Proyecto Django -- Aprendizaje
 
-Breve descripción de lo que hace tu aplicación o servicio.
+Este es un proyecto desarrollado con **Django** con el objetivo de
+aprender y practicar los conceptos fundamentales del framework:
+estructura de aplicaciones, modelos, vistas, migraciones y uso de la
+shell interactiva.
 
-## 📌 Objetivo
-Explica de forma clara cuál es el propósito de la aplicación (por ejemplo: gestionar X, centralizar Y, automatizar Z).
+------------------------------------------------------------------------
 
-## Comandos
-- Este comando nos sirve para iniciar nuestro proyecto, donde vamos a tener nuestros modeolos y las vistas
+## 📌 Objetivo del Proyecto
+
+El propósito de este proyecto es:
+
+- Familiarizarse con la estructura base de Django.\
+- Crear y manejar aplicaciones dentro de un proyecto.\
+- Trabajar con modelos, migraciones y consultas.\
+- Practicar el uso de herramientas internas como `shell` y `dbshell`.
+
+------------------------------------------------------------------------
+
+## 🛠️ Comandos útiles de Django
+
+### 📂 Crear una aplicación
+
+Crea una nueva app dentro del proyecto:
+
+``` bash
+python manage.py startapp <nombre_app>
 ```
-python manage.py startapp <nombre>
-```
-- Este comando nos permite instalar las migraciones iniciales del pryecto
+
+### 🧱 Aplicar migraciones existentes
+
+Ejecuta todas las migraciones pendientes:
+
 ``` bash
 python manage.py migrate
 ```
-- Comando para crear migraciones
-```bash
+
+### 🏗️ Crear nuevas migraciones
+
+Genera archivos de migración según los cambios en los modelos:
+
+``` bash
 python manage.py makemigrations
-``` 
-- Comando para revisar la db
+```
+
+### Ver las migraciones
+
 ```bash
-./manage.py dbshell
-``` 
+python manage.py showmigrations 
+```
 
+### 🗄️ Acceder a la base de datos
 
+Abre la consola de la base de datos configurada:
 
+``` bash
+python manage.py dbshell
+```
 
+### 🐍 Abrir la shell interactiva
+
+Permite ejecutar código Django directamente:
+
+``` bash
+python manage.py shell
+```
+
+![Crear y guardar un car](images/view_save_shell.png)
+
+------------------------------------------------------------------------
+
+## 📚 Notas
+
+Este proyecto es únicamente para fines educativos, con el objetivo de
+entender cómo funciona Django desde cero.
