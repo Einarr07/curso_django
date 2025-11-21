@@ -14,31 +14,15 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.http import HttpResponse
 from django.urls import path
 
-from my_first_app.models import Author
-
-
-def my_view(request, *args, **kwargs):
-    print(args)
-    print(kwargs)
-    return HttpResponse("Hello, world.")
-
-
-def author_view(request, *args, **kwargs):
-    print(args)
-    print(kwargs)
-    author = Author.objects.get(id=kwargs['id'])
-    profile = author.profile
-    return HttpResponse(
-        f"Author: {author.name} - Birth Date: {author.birth_date} -\nWebsite: {profile.website} - Biography: {profile.biography}")
-
+from .views import CarListView, my_test_view, author_view
 
 urlpatterns = [
-    path('listado/', my_view),
-    path('detalle/<int:id>', my_view),
-    path('marcas/<str:brand>', my_view),
+    # path('listado/', car_view),
+    path('listado/', CarListView.as_view()),
+    path('detalle/<int:id>', my_test_view),
+    path('marcas/<str:brand>', my_test_view),
 
     path('autor/<int:id>', author_view),
 ]
